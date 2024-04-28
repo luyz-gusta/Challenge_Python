@@ -26,7 +26,7 @@ if connection:
         )
 
         if int(option) == 1:
-            looping = game.quiz(cursor=cursor)
+            looping = game.quiz(connection=connection,cursor=cursor, user_name=user_name)
         elif int(option) == 2:
             print('')
         elif int(option) == 3:
