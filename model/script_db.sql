@@ -26,11 +26,13 @@ create table tbl_response_quiz_py(
 
 create table tbl_ranking_quiz_py(
 	id int not null auto_increment primary key,
-	user_name varchar(50) not null,
+	user_name varchar(20) not null,
     points int not null,
     
     unique index(id)
 );
+
+alter table tbl_ranking_quiz_py modify column user
 
 DELIMITER //
 

@@ -97,6 +97,7 @@ def quiz(connection, cursor, user_name):
         elif option == 'n':
             status = False
             looping_decision = False
+            print('Obrigado por jogar o quiz !!')
         else:
             print('Opção inválida! Digite a opção novamente:')
 

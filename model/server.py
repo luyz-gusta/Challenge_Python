@@ -1,7 +1,7 @@
 import mysql.connector
 
 
-def create_server_connection(host, password, database):
+def create_server_connection(host, password, database, root):
     connection = None
 
     try:
@@ -9,7 +9,7 @@ def create_server_connection(host, password, database):
         connection = mysql.connector.connect(
             host=host,
             port='3306',
-            user='root',
+            user=root,
             password=password,
             database=database
         )
