@@ -36,7 +36,7 @@ def ranking(cursor):
 
     status = True
     looping_decision = True
-    print('Deseja voltar ao menu? ')
+    print('\nDeseja voltar ao menu? ')
     while looping_decision:
         option = input('(S) Sim \n(N) Não, encerrar programar\n').lower()
 
