@@ -1,6 +1,6 @@
 import os
 from model import server
-from pages import game
+from pages import game, ranking
 
 os.system('cls')
 connection = server.create_server_connection(
@@ -12,7 +12,14 @@ connection = server.create_server_connection(
 
 if connection:
     print('**************** Quiz Formula E ****************')
-    user_name = input('Digite o nome do usuario: ')
+
+    user_name = input('Digite o nome do usuario (Até 20 carácteres): ')
+    while True:
+        if len(user_name) < 3 or len(user_name) > 20:
+            print('Nome de usuário inválido!!')
+            user_name = input('Digite novamente o nome do usuario (Até 20 carácteres): ')
+        else:
+            break
     print(f'Bem vindo {user_name} !!')
 
     looping = True
@@ -29,15 +36,14 @@ if connection:
             '\n(3)Sair do programa\n'
         )
 
-        if int(option) == 1:
+        if option == '1':
             looping = game.quiz(connection=connection,cursor=cursor, user_name=user_name)
-        elif int(option) == 2:
-            print('')
-        elif int(option) == 4:
+        elif option == '2':
+            looping = ranking.ranking(cursor=cursor)
+        elif option == '3':
             looping = False
         else:
             print('Opção inválida! Digite novamente.')
-
-        print('Programa finalizado!')
         cursor.close()
 connection.close()
+print('Programa finalizado!')

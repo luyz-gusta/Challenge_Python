@@ -32,8 +32,6 @@ create table tbl_ranking_quiz_py(
     unique index(id)
 );
 
-alter table tbl_ranking_quiz_py modify column user
-
 DELIMITER //
 
 CREATE PROCEDURE getUserRankingPosition(

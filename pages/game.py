@@ -1,4 +1,4 @@
-import random
+import time
 from model import responseDAO, questionDAO, rankingDAO
 
 
@@ -59,11 +59,10 @@ def quiz(connection, cursor, user_name):
                         looping_response = False
 
     user = rankingDAO.insertUserAndPoint(connection=connection, cursor=cursor, user_name=user_name, points=points * 10)
-
     print(f"VOCÊ FEZ {points * 10} pontos está em {user[0][0]}°lugar")
+    time.sleep(2.0)
 
     looping_template = True
-
     print('Deseja ver quais questões você acertou para essa pontuação?')
     while looping_template:
         decision = input('(S) Sim \n(N) Não\n').lower()
@@ -87,6 +86,7 @@ def quiz(connection, cursor, user_name):
             print("Opção Inválida! Digite uma das opção abaixo:")
     looping_decision = True
 
+    time.sleep(2.0)
     print('Deseja voltar ao menu? ')
     while looping_decision:
         option = input('(S) Sim \n(N) Não, encerrar programar\n').lower()

@@ -1,5 +1,5 @@
 def selectRanking(cursor):
-    script = f"select * from tbl_ranking_quiz_py"
+    script = f"select user_name as nickname, points as pontos  from tbl_ranking_quiz_py order by points desc"
     cursor.execute(script)
     result = cursor.fetchall()
 
@@ -21,6 +21,4 @@ def insertUserAndPoint(connection, cursor, user_name, points):
     cursor.callproc('getUserRankingPosition', args)
     for data in cursor.stored_results():
         result = data.fetchall()
-    print(result)
-
     return result
