@@ -12,7 +12,7 @@
 
 ## Sobre
 
-Este projeto é uma aplicação de console, inicialmente, conectada a um banco de dados, onde o jogador entra com um nome de usuário e joga o quiz para saber um pouco mais sobre a formula E, após ele realizar o quiz será gerado uma pontuação que salvará ele no ranking.
+Este projeto é uma aplicação inicialmente de console, conectada a um banco de dados, onde o jogador entra com um nome de usuário e joga o quiz para saber um pouco mais sobre a formula E, após ele realizar o quiz será gerado uma pontuação que salvará ele no ranking.
 
 ## Como rodar a aplicação localmente (Após a clonagem)
 
